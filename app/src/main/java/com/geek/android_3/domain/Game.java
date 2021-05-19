@@ -19,14 +19,13 @@ public class Game<CardContent> {
 
     public void cardClick(Card<CardContent> card) {
         card.setFaceUp(!card.isFaceUp());
-        for (Card<CardContent> currentCard: cards) {
+        for (Card<CardContent> currentCard : cards) {
             if (currentCard.getId() != card.getId() && currentCard.isFaceUp()
                     && card.getContent().equals(currentCard.getContent())) {
                 card.setMatched(true);
                 currentCard.setMatched(true);
             }
-            if (currentCard.getId() != card.getId() && currentCard.isFaceUp()
-                    && !card.getContent().equals(currentCard.getContent())){
+            if (currentCard.getId() != card.getId() && currentCard.isFaceUp() && !card.getContent().equals(currentCard.getContent())) {
                 currentCard.setFaceUp(false);
             }
         }
